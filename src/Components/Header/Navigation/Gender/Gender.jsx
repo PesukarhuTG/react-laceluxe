@@ -1,4 +1,6 @@
+import { NavLink } from 'react-router-dom';
 import style from './Gender.module.scss';
+import cn from 'classnames';
 
 const list = [
   { link: 'women', title: 'Женщины' },
@@ -11,7 +13,7 @@ const Gender = () => {
       {list.map((item) => {
         return (
           <li className={style.item} key={item.link}>
-            <a className={style.link} href={item.link}>{item.title}</a>
+            <NavLink className={({isActive}) => cn(style.link, isActive && style.linkActive )} to={item.link}>{item.title}</NavLink>
           </li>
         );
       })}
