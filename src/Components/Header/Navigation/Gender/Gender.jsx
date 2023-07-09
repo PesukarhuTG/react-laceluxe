@@ -1,10 +1,10 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import style from './Gender.module.scss';
 import cn from 'classnames';
+import { useSelector } from 'react-redux';
 
 const Gender = ({ list }) => {
-  const location = useLocation();
-  const gender = location.pathname.split('/')[1] || 'women';
+  const { activeGender } = useSelector((state) => state.navigation);
 
   return (
     <ul className={style.gender}>
@@ -15,7 +15,7 @@ const Gender = ({ list }) => {
               className={({ isActive }) =>
                 cn(
                   style.link,
-                  (isActive || gender === item.link) && style.linkActive
+                  (isActive || activeGender === item.link) && style.linkActive
                 )
               }
               to={item.link}
