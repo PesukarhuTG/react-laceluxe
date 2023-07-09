@@ -2,11 +2,11 @@ import Container from '../../Layout/Container/Container';
 import Gender from './Gender/Gender';
 import Category from './Category/Category';
 
-const Navigation = () => {
+const Navigation = ({list}) => {
   return (
     <Container>
-      <Gender />
-      <Category />
+      <Gender list={list} />
+      <Category list={list}/>
     </Container>
   );
 };

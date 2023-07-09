@@ -2,12 +2,7 @@ import { NavLink } from 'react-router-dom';
 import style from './Gender.module.scss';
 import cn from 'classnames';
 
-const list = [
-  { link: 'women', title: 'Женщины' },
-  { link: 'men', title: 'Мужчины' },
-];
-
-const Gender = () => {
+const Gender = ({ list }) => {
   return (
     <ul className={style.gender}>
       {list.map((item) => {
