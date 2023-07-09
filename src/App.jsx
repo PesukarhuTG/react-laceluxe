@@ -1,4 +1,9 @@
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from 'react-router-dom';
 import Root from './routes/Root';
 import MainPage from './Components/MainPage/MainPage';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
@@ -26,7 +31,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchNavigation());
-  }, [dispatch])
+  }, [dispatch]);
 
   return <RouterProvider router={router}></RouterProvider>;
 };
