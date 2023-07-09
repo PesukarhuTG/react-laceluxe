@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import navigationReducer from './navigationSlice'
+import navigationReducer from './navSlice'
 
 const rootReducer = combineReducers({
   navigation: navigationReducer,

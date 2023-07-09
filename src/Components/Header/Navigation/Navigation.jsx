@@ -4,7 +4,8 @@ import Category from './Category/Category';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { setActiveGender } from '../../../store/NavigationSlice';
+import { setActiveGender } from '../../../store/navSlice';
+
 
 const Navigation = () => {
   const dispatch = useDispatch();

@@ -9,7 +9,8 @@ import MainPage from './Components/MainPage/MainPage';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchNavigation } from './store/NavigationSlice';
+import { fetchNavigation } from './store/navSlice';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
