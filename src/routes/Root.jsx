@@ -31,7 +31,7 @@ const list = [
 const Root = () => {
   return (
     <>
-      <Header list={list} />
+      <Header />
       <Main>
         <Outlet />
       </Main>

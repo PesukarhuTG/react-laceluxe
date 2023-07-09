@@ -2,11 +2,11 @@ import Container from '../../Layout/Container/Container';
 import Gender from './Gender/Gender';
 import Category from './Category/Category';
 import { useDispatch } from 'react-redux';
-import { setActiveGender } from '../../../store/navigationSlice';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { setActiveGender } from '../../../store/NavigationSlice';
 
-const Navigation = ({ list }) => {
+const Navigation = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const gender = location.pathname.split('/')[1] || 'women';
@@ -18,8 +18,8 @@ const Navigation = ({ list }) => {
   return (
     <nav>
       <Container>
-        <Gender list={list} />
-        <Category list={list} />
+        <Gender />
+        <Category />
       </Container>
     </nav>
   );

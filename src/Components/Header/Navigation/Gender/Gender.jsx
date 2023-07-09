@@ -3,24 +3,24 @@ import style from './Gender.module.scss';
 import cn from 'classnames';
 import { useSelector } from 'react-redux';
 
-const Gender = ({ list }) => {
-  const { activeGender } = useSelector((state) => state.navigation);
+const Gender = () => {
+  const { activeGender, genderList, categories } = useSelector((state) => state.navigation);
 
   return (
     <ul className={style.gender}>
-      {list.map((item) => {
+      {genderList.map((item) => {
         return (
-          <li className={style.item} key={item.link}>
+          <li className={style.item} key={item}>
             <NavLink
               className={({ isActive }) =>
                 cn(
                   style.link,
-                  (isActive || activeGender === item.link) && style.linkActive
+                  (isActive || activeGender === item) && style.linkActive
                 )
               }
-              to={item.link}
+              to={item}
             >
-              {item.title}
+              {categories[item].title}
             </NavLink>
           </li>
         );
