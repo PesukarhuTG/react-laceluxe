@@ -1,12 +1,13 @@
+import Container from '../../Layout/Container/Container';
 import Gender from './Gender/Gender';
 import Category from './Category/Category';
 
 const Navigation = () => {
   return (
-    <nav className='container'>
+    <Container>
       <Gender />
       <Category />
-    </nav>
+    </Container>
   );
 };
 
