@@ -1,4 +1,4 @@
-import styles from './Footer.module.scss';
+import style from './Footer.module.scss';
 import Container from '../Layout/Container/Container';
 import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
@@ -10,25 +10,25 @@ const Footer = () => {
   return (
     <footer>
       <Container>
-        <div className={styles.container}>
-          <div className={styles.category}>
-            <h2 className={cn(styles.title, styles.categoryTitle)}>Каталог</h2>
+        <div className={style.container}>
+          <div className={style.category}>
+            <h2 className={cn(style.title, style.categoryTitle)}>Каталог</h2>
 
-            <ul className={styles.categoryList}>
+            <ul className={style.categoryList}>
               {genderList.map((item) => {
                 return (
                   <li key={item}>
-                    <h3 className={styles.categorySubtitle}>
-                      <NavLink className={styles.link} to={item}>
+                    <h3 className={style.categorySubtitle}>
+                      <NavLink className={style.link} to={item}>
                         {categories[item].title}
                       </NavLink>
                     </h3>
-                    <ul className={styles.categorySublist}>
+                    <ul className={style.categorySublist}>
                       {categories[item].list?.map((elem) => {
                         return (
                           <li key={elem.slug}>
                             <NavLink
-                              className={styles.link}
+                              className={style.link}
                               to={`${item}/${elem.slug}`}
                             >
                               {elem.title}
@@ -44,14 +44,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className={styles.social}>
-            <h2 className={cn(styles.title, styles.socialTitle)}>
+          <div className={style.social}>
+            <h2 className={cn(style.title, style.socialTitle)}>
               Связаться с нами
             </h2>
-            <p className={styles.socialSubtitle}>Контакты и адреса магазинов</p>
-            <ul className={styles.socialList}>
+            <p className={style.socialSubtitle}>Контакты и адреса магазинов</p>
+            <ul className={style.socialList}>
               <li>
-                <a href='#' className={cn(styles.link, styles.socialLinkFB)}>
+                <a href='#' className={cn(style.link, style.socialLinkFB)}>
                   <svg
                     width='24'
                     height='24'
@@ -64,7 +64,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href='#' className={cn(styles.link, styles.socialLinkVK)}>
+                <a href='#' className={cn(style.link, style.socialLinkVK)}>
                   <svg
                     width='24'
                     height='24'
@@ -79,29 +79,29 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className={styles.contacts}>
-            <a className={styles.link} href='mailto:inspired@gmail.com'>
+          <div className={style.contacts}>
+            <a className={style.link} href='mailto:inspired@gmail.com'>
               Inspired@gmail.com
             </a>
-            <a className={styles.link} href='tel:89304902620'>
+            <a className={style.link} href='tel:89304902620'>
               8 930 490 26 20
             </a>
           </div>
 
-          <div className={styles.copyright}>
+          <div className={style.copyright}>
             <p>&copy; INSPIRED, 2023</p>
           </div>
 
-          <div className={styles.development}>
-            <ul className={styles.developmentList}>
+          <div className={style.development}>
+            <ul className={style.developmentList}>
               <li>
-                <a className={styles.link} href='#'>
+                <a className={style.link} href='#'>
                   Designer: Anastasia Ilina
                 </a>
               </li>
               <li>
                 <a
-                  className={styles.link}
+                  className={style.link}
                   href='https://github.com/PesukarhuTG'
                 >
                   Developer: Tatiana Fox
