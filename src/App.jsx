@@ -10,6 +10,7 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchNavigation } from './store/navSlice';
+import { fetchColors } from './store/colorSlice';
 
 
 const router = createBrowserRouter(
@@ -32,6 +33,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchNavigation());
+    dispatch(fetchColors());
   }, [dispatch]);
 
   return <RouterProvider router={router}></RouterProvider>;
