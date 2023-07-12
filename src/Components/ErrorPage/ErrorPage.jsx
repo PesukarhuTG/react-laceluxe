@@ -5,10 +5,10 @@ const ErrorPage = () => {
   const error = useRouteError();
 
   return (
-    <div>
+    <Container>
       <h2>Ошибка 404</h2>
       <p>{error?.message || 'Неизвестная ошибка, попробуйте позже'}</p>
-    </div>
+    </Container>
   );
 };
 
