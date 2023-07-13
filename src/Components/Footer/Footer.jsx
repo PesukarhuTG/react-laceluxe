@@ -19,7 +19,7 @@ const Footer = () => {
                 return (
                   <li key={item}>
                     <h3 className={style.categorySubtitle}>
-                      <NavLink className={style.link} to={item}>
+                      <NavLink className={style.link} to={`/catalog/${item}`}>
                         {categories[item].title}
                       </NavLink>
                     </h3>
@@ -29,7 +29,7 @@ const Footer = () => {
                           <li key={elem.slug}>
                             <NavLink
                               className={style.link}
-                              to={`${item}/${elem.slug}`}
+                              to={`/catalog/${item}/${elem.slug}`}
                             >
                               {elem.title}
                             </NavLink>
@@ -37,7 +37,6 @@ const Footer = () => {
                         );
                       })}
                     </ul>
-                    
                   </li>
                 );
               })}
@@ -100,10 +99,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  className={style.link}
-                  href='https://github.com/PesukarhuTG'
-                >
+                <a className={style.link} href='https://github.com/PesukarhuTG'>
                   Developer: Tatiana Fox
                 </a>
               </li>
