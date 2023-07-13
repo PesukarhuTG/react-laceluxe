@@ -9,9 +9,12 @@ import Banner from '../Banner/Banner';
 const MainPage = () => {
   const { gender, category } = useParams(); //из path сможем достать категории
   const dispatch = useDispatch();
-  const { activeGender, categories, genderList } = useSelector((state) => state.navigation);
+  const { activeGender, categories, genderList } = useSelector(
+    (state) => state.navigation
+  );
 
   const genderData = categories[activeGender];
+  const categoryData = genderData?.list.find((item) => item.slug === category);
 
   useEffect(() => {
     if (gender) {
@@ -20,7 +23,6 @@ const MainPage = () => {
       dispatch(setActiveGender(genderList[0]));
       dispatch(fetchGender(genderList[0]));
     }
-    
   }, [gender, genderList]);
 
   useEffect(() => {
@@ -38,8 +40,7 @@ const MainPage = () => {
   return (
     <>
       <Banner data={genderData?.banner} />
-      <Goods categoryData={genderData?.list.find((item) => item.slug === category)}
-      />
+      <Goods categoryData={categoryData} />
     </>
   );
 };
