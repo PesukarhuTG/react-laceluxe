@@ -9,13 +9,19 @@ import Banner from '../Banner/Banner';
 const MainPage = () => {
   const { gender, category } = useParams(); //из path сможем достать категории
   const dispatch = useDispatch();
-  const { activeGender, categories } = useSelector((state) => state.navigation);
+  const { activeGender, categories, genderList } = useSelector((state) => state.navigation);
 
   const genderData = categories[activeGender];
 
   useEffect(() => {
-    dispatch(setActiveGender(gender));
-  }, [gender]);
+    if (gender) {
+      dispatch(setActiveGender(gender));
+    } else if (genderList[0]) {
+      dispatch(setActiveGender(genderList[0]));
+      dispatch(fetchGender(genderList[0]));
+    }
+    
+  }, [gender, genderList]);
 
   useEffect(() => {
     if (gender && category) {
