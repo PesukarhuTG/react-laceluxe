@@ -82,4 +82,12 @@
     font-size: 9px;
     line-height: 18px;
   }
+
+  &Like {
+    color: transparent;
+    &:hover {
+      color: crimson;
+    }
+
+  }
 }
