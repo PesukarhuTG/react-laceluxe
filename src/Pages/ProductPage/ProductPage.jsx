@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import style from './ProductPage.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import Container from '../Layout/Container/Container';
+import Container from '../../Components/Layout/Container/Container';
 import { fetchProduct } from '../../store/productSlice';
 import { useParams } from 'react-router-dom';
 import { API_URL } from '../../const';
 import cn from 'classnames';
-import ColorList from '../ColorList/ColorList';
-import ProductSize from '../ProductSize/ProductSize';
+import ColorList from '../../Components/ColorList/ColorList';
+import ProductSize from '../../Components/ProductSize/ProductSize';
 import { ReactComponent as Like } from '../../assets/heart.svg';
-import Count from '../Count/Count';
-import Goods from '../Goods/Goods';
+import Count from '../../Components/Count/Count';
+import Goods from '../../Components/Goods/Goods';
 import { fetchCategory } from '../../store/goodSlice';
 
 const ProductPage = () => {
@@ -43,11 +43,11 @@ const ProductPage = () => {
 
   useEffect(() => {
     dispatch(fetchProduct(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     dispatch(fetchCategory({gender, category, count: 4, top: true, exclude: id}));
-  }, [gender, category, id]);
+  }, [gender, category, id, dispatch]);
 
   return (
     <>
@@ -95,10 +95,10 @@ const ProductPage = () => {
                 handleIncrement = { handleIncrement }
                 handleDecrement = { handleDecrement }
             />
-            <button className={style.addCart} type='submit' arial-label='Добавить в корзину'>
+            <button className={style.addCart} type='submit' aria-label='Добавить в корзину'>
               В корзину
             </button>
-            <button type='button' arial-label='Добавить в избранное'>
+            <button type='button'aria-label='Добавить в избранное'>
               <Like />
             </button>
           </div>

@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCategory, fetchGender } from '../../store/goodSlice';
 import { setActiveGender } from '../../store/navSlice';
-import Goods from '../Goods/Goods';
-import Banner from '../Banner/Banner';
+import Goods from '../../Components/Goods/Goods';
+import Banner from '../../Components/Banner/Banner';
 
 const MainPage = () => {
   const { gender, category } = useParams(); //из path сможем достать категории
@@ -23,7 +23,7 @@ const MainPage = () => {
       dispatch(setActiveGender(genderList[0]));
       dispatch(fetchGender(genderList[0]));
     }
-  }, [gender, genderList]);
+  }, [gender, genderList, dispatch]);
 
   useEffect(() => {
     if (gender && category) {
@@ -35,7 +35,7 @@ const MainPage = () => {
       dispatch(fetchGender(gender));
       return;
     }
-  }, [gender, category]);
+  }, [gender, category, dispatch]);
 
   return (
     <>

@@ -5,16 +5,15 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import Root from './routes/Root';
-import MainPage from './Components/MainPage/MainPage';
-import ErrorPage from './Components/ErrorPage/ErrorPage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchNavigation } from './store/navSlice';
 import { fetchColors } from './store/colorSlice';
-import ProductPage from './Components/ProductPage/ProductPage';
+import MainPage from './Pages/MainPage/MainPage';
+import ProductPage from './Pages/ProductPage/ProductPage';
 import FavoritePage from './Pages/FavoritePage/FavoritePage';
 import CartPage from './Pages/CartPage/CartPage';
-
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
