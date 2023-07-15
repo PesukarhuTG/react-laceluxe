@@ -45,7 +45,11 @@ const ProductPage = () => {
   return (
     <section className={style.card}>
       <Container className={style.container}>
-        <img src={`${API_URL}/${product.pic}`} alt={product.title} />
+        <img 
+          className={style.image}
+          src={`${API_URL}/${product.pic}`} 
+          alt={product.title}
+        />
         <form className={style.content}>
           <h2 className={style.title}>{product.title}</h2>
           <p className={style.price}>руб {product.price}</p>

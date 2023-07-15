@@ -35,6 +35,12 @@
 
 .item {
   cursor: pointer;
+  transition: 0.3s all;
+}
+
+.item:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .input {

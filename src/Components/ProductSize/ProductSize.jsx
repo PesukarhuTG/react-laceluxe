@@ -9,25 +9,23 @@ const ProductSize = ({ size, selectedSize, handleSizeChange }) => {
     <div className={style.size}>
       <span className={cn(style.subtitle, style.title)}>Размер</span>
 
-      <ul className={style.list}>
-        {size?.map((sizeName, i) => {
+      <div className={style.list}>
+        {size?.map((sizeName) => {
           return (
-            <li key={i}>
-              <label className={style.item} ref={sizeRef}>
-                <input
-                  className={style.input}
-                  type='radio'
-                  name='size'
-                  value={sizeName}
-                  checked={selectedSize === size ? true : false}
-                  onChange={handleSizeChange}
-                />
-                <span className={style.check}>{sizeName}</span>
-              </label>
-            </li>
+            <label className={style.item} key={sizeName} ref={sizeRef}>
+              <input
+                className={style.input}
+                type='radio'
+                name='size'
+                value={sizeName}
+                checked={selectedSize === sizeName}
+                onChange={handleSizeChange}
+              />
+              <span className={style.check}>{sizeName}</span>
+            </label>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };
