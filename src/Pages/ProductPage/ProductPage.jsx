@@ -8,10 +8,10 @@ import { API_URL } from '../../const';
 import cn from 'classnames';
 import ColorList from '../../Components/ColorList/ColorList';
 import ProductSize from '../../Components/ProductSize/ProductSize';
-import { ReactComponent as Like } from '../../assets/heart.svg';
 import Count from '../../Components/Count/Count';
 import Goods from '../../Components/Goods/Goods';
 import { fetchCategory } from '../../store/goodSlice';
+import BtnLike from '../../Components/BtnLike/BtnLike';
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -98,9 +98,8 @@ const ProductPage = () => {
             <button className={style.addCart} type='submit' aria-label='Добавить в корзину'>
               В корзину
             </button>
-            <button type='button'aria-label='Добавить в избранное'>
-              <Like />
-            </button>
+
+            <BtnLike id={id} />
           </div>
         </form>
       </Container>
