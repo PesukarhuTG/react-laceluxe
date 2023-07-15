@@ -11,11 +11,13 @@ import ProductSize from '../ProductSize/ProductSize';
 import { ReactComponent as Like } from '../../assets/heart.svg';
 import Count from '../Count/Count';
 import Goods from '../Goods/Goods';
+import { fetchCategory } from '../../store/goodSlice';
 
 const ProductPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { product } = useSelector((state) => state.product);
+  const { gender, category, pic, title, price, id: prodId, colors, description, size  } = product;
 
   const [selectedColor, setSelectedColor] = useState('');
   const [count, setCount] = useState(1);
@@ -43,34 +45,38 @@ const ProductPage = () => {
     dispatch(fetchProduct(id));
   }, [id]);
 
+  useEffect(() => {
+    dispatch(fetchCategory({gender, category, count: 4, top: true, exclude: id}));
+  }, [gender, category, id]);
+
   return (
     <>
     <section className={style.card}>
       <Container className={style.container}>
         <img 
           className={style.image}
-          src={`${API_URL}/${product.pic}`} 
-          alt={product.title}
+          src={`${API_URL}/${pic}`} 
+          alt={title}
         />
         <form className={style.content}>
-          <h2 className={style.title}>{product.title}</h2>
-          <p className={style.price}>руб {product.price}</p>
+          <h2 className={style.title}>{title}</h2>
+          <p className={style.price}>руб {price}</p>
           <div className={style.vendorCode}>
             <span className={style.subtitle}>Артикул</span>
-            <span className={style.id}>{product.id}</span>
+            <span className={style.id}>{prodId}</span>
           </div>
 
           <div className={style.color}>
             <span className={cn(style.subtitle, style.colorTitle)}>Цвет</span>
             <ColorList
-              colors={product.colors}
+              colors={colors}
               selectedColor={selectedColor}
               handleColorChange={handleColorChange}
             />
           </div>
 
             <ProductSize
-              size={product.size}
+              size={size}
               selectedSize={selectedSize}
               handleSizeChange={handleSizeChange}
             />
@@ -79,7 +85,7 @@ const ProductPage = () => {
             <p className={cn(style.subtitle, style.descriptionTitle)}>
               Описание
             </p>
-            <p className={style.descriptionText}>{product.description}</p>
+            <p className={style.descriptionText}>{description}</p>
           </div>
 
           <div className={style.control}>
