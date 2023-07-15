@@ -8,7 +8,7 @@ const usePageFromSearchParams = (dispatch) => {
   const pageURL = searchParams.get('page');
 
   useEffect(() => {
-    dispatch(setPage(pageURL));
+    dispatch(setPage(+pageURL));
   }, [pageURL, dispatch]);
 
   return pageURL;
