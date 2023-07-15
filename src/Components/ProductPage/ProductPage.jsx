@@ -10,6 +10,7 @@ import ColorList from '../ColorList/ColorList';
 import ProductSize from '../ProductSize/ProductSize';
 import { ReactComponent as Like } from '../../assets/heart.svg';
 import Count from '../Count/Count';
+import Goods from '../Goods/Goods';
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ const ProductPage = () => {
   }, [id]);
 
   return (
+    <>
     <section className={style.card}>
       <Container className={style.container}>
         <img 
@@ -97,6 +99,9 @@ const ProductPage = () => {
         </form>
       </Container>
     </section>
+
+    <Goods title={'Вам может понравиться'} />
+    </>
   );
 };
 

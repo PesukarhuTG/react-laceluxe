@@ -3,9 +3,8 @@ import Container from '../Layout/Container/Container';
 import Product from '../Product/Product';
 import style from './Goods.module.scss';
 
-const Goods = ({categoryData}) => {
+const Goods = ({title='Новинки'}) => {
   const { goodsList } = useSelector((state) => state.goods);
-  const title = categoryData?.title ??'Новинки';
 
   return (
     <section>
