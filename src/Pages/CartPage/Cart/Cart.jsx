@@ -3,7 +3,15 @@ import style from './Cart.module.scss';
 import CartItem from './CartItem/CartItem';
 
 const Cart = ({ cartItems, goodsList }) => {
-  let totalPrice = 0;
+  const totalPrice = cartItems.reduce((sum, item) => {
+    const product = goodsList.find(elem => elem.id === item.id);
+
+    if (product) {
+      return sum + (product.price * item.count);
+    } else {
+      return sum;
+    }
+  }, 0);
 
   return (
     <section className={style.cart}>
