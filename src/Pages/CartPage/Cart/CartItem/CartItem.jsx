@@ -11,7 +11,9 @@ const CartItem = ({ id, color, size, count, goodsList }) => {
   const item = goodsList.find((item) => item.id === id);
 
   const handleCountChange = (count) => {
-    dispatch(addToCart({ id, color, size, count }));
+    if (count > 0) {
+      dispatch(addToCart({ id, color, size, count }));
+    }
   };
 
   const handleRemoveItem = () => {
@@ -60,11 +62,11 @@ const CartItem = ({ id, color, size, count, goodsList }) => {
       <Count
         className={style.count}
         count={count}
-        handleIncrement={() => {
-          handleCountChange(count + 1);
-        }}
         handleDecrement={() => {
           handleCountChange(count - 1);
+        }}
+        handleIncrement={() => {
+          handleCountChange(count + 1);
         }}
       />
     </article>

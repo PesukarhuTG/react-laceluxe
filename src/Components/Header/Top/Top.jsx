@@ -35,7 +35,7 @@ const Top = () => {
             <li>
               <NavLink to={'/cart'} className={style.topLink}>
                 <CartSVG />
-                {countItems && <span className={style.topLinkCount}>{countItems}</span>}
+                <span className={style.topLinkCount}>{countItems}</span>
               </NavLink>
             </li>
             <li>
