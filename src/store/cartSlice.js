@@ -26,6 +26,7 @@ const cartSlice = createSlice({
       }
 
       localStorage.setItem('cart', JSON.stringify(state.cartItems));
+      state.countItems = state.cartItems.length;
     },
     removeFromCart(state, action) {
       const { id, color, size } = action.payload;
@@ -39,6 +40,7 @@ const cartSlice = createSlice({
       }
 
       localStorage.setItem('cart', JSON.stringify(state.cartItems));
+      state.countItems = state.cartItems.length;
     },
   },
 });
