@@ -7,14 +7,12 @@ import Pagination from '../Pagination/Pagination';
 const Goods = ({ title }) => {
   const { goodsList, totalCount } = useSelector((state) => state.goods);
 
-  const supData = (totalCount === 0) ? null : totalCount; //тк был баг, если 0 - выводил
-
   return (
     <section>
       <Container>
         <h2 className={style.title}>
           {title ?? 'Новинки'}
-          {supData && <sup>&nbsp;({supData})</sup>}
+          {totalCount ? <sup>&nbsp;({totalCount})</sup> : ''}
         </h2>
         <ul className={style.list}>
           {goodsList.map((item) => (
