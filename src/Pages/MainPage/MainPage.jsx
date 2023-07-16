@@ -11,6 +11,7 @@ const MainPage = () => {
   const { gender, category } = useParams(); //из path сможем достать категории
   const dispatch = useDispatch();
   const { activeGender, categories, genderList } = useSelector( (state) => state.navigation);
+  const { pages } = useSelector( (state) => state.goods);
   const page = usePageFromSearchParams(dispatch);
 
   const genderData = categories[activeGender];
@@ -29,8 +30,12 @@ const MainPage = () => {
     if (gender && category) {
       const param = { gender, category };
 
+      if (pages) {
+        param.page = 1; //если есть массив страниц, добавляем 1 по умолч
+      }
+
       if (page) {
-        param.page = page; //если стр есть, добавляем ее в объект
+        param.page = page; //если есть конкретная страница, добавляем ее в объект
       }
 
       dispatch(fetchCategory(param));
@@ -41,7 +46,7 @@ const MainPage = () => {
       dispatch(fetchGender(gender));
       return;
     }
-  }, [gender, category, page, dispatch]);
+  }, [gender, category, page, pages, dispatch]);
 
   
 

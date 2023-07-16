@@ -7,7 +7,7 @@ import { ReactComponent as ArrowRightSVG } from '../../assets/arrow-right.svg';
 import { useEffect, useState } from 'react';
 
 const Pagination = () => {
-  const [pagePagination, setPagePagination] = useState(null);
+  const [pagePagination, setPagePagination] = useState(1);
   const pathname = useLocation().pathname;
   const { page, pages } = useSelector((state) => state.goods);
 
@@ -26,6 +26,12 @@ const Pagination = () => {
   };
 
   useEffect(() => {
+    if (pages) {
+      setPagePagination(1);
+    }
+  }, [pages]);
+
+  useEffect(() => {
     setPagePagination(page);
   }, [page]);
 
@@ -38,7 +44,8 @@ const Pagination = () => {
       paginationItems.push(
         <li key={i}>
           <NavLink
-            className={cn(style.link, i === +pagePagination ?? style.linkActive)}
+            //className={cn(style.link, (i === +pagePagination) ?? style.linkActive)}
+            className={cn(style.link, i === +pagePagination && style.linkActive)}
             to={`${pathname}?page=${i}`}
             onClick={() => handlePageChange(i)}
           >
