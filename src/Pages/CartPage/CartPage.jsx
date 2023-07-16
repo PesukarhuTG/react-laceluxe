@@ -1,7 +1,13 @@
+import Order from './Order/Order';
+import Cart from './Cart/Cart';
+
 const CartPage = () => {
   return (
-    <div>CartPage</div>
-  )
+    <>
+      <Cart />
+      <Order />
+    </>
+  );
 };
 
 export default CartPage;
