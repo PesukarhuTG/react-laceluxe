@@ -2,9 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { API_URL } from '../../../../const';
 import style from './CartItem.module.scss';
 import cn from 'classnames';
-import { ReactComponent as DelSVG } from '../../../../assets/close.svg';
 import Count from '../../../../Components/Count/Count';
-import { addToCart } from '../../../../store/cartSlice';
+import { addToCart, removeFromCart } from '../../../../store/cartSlice';
 
 const CartItem = ({ id, color, size, count, goodsList }) => {
   const dispatch = useDispatch();
@@ -12,7 +11,11 @@ const CartItem = ({ id, color, size, count, goodsList }) => {
   const item = goodsList.find((item) => item.id === id);
 
   const handleCountChange = (count) => {
-    dispatch(addToCart({id, color, size,count}));
+    dispatch(addToCart({ id, color, size, count }));
+  };
+
+  const handleRemoveItem = () => {
+    dispatch(removeFromCart({ id, color, size }));
   };
 
   return (
@@ -34,7 +37,10 @@ const CartItem = ({ id, color, size, count, goodsList }) => {
             <span className={cn(style.subtitle, style.colorTitle)}>Цвет</span>
             <div
               className={style.colorItem}
-              style={{ '--data-color': colorList?.find((item) => item.title === color)?.code }}
+              style={{
+                '--data-color': colorList?.find((item) => item.title === color)
+                  ?.code,
+              }}
             ></div>
           </div>
           <div className={style.size}>
@@ -44,18 +50,21 @@ const CartItem = ({ id, color, size, count, goodsList }) => {
         </div>
       </div>
 
-      <button className={style.del} type='button' aria-label='Удалить товар из корзины'>
-        <DelSVG />
-      </button>
+      <button
+        className={style.del}
+        type='button'
+        aria-label='Удалить товар из корзины'
+        onClick={handleRemoveItem}
+      />
 
-      <Count 
+      <Count
         className={style.count}
         count={count}
         handleIncrement={() => {
-          handleCountChange(count + 1)
+          handleCountChange(count + 1);
         }}
         handleDecrement={() => {
-          handleCountChange(count - 1)
+          handleCountChange(count - 1);
         }}
       />
     </article>
