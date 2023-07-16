@@ -4,15 +4,17 @@ import Product from '../Product/Product';
 import style from './Goods.module.scss';
 import Pagination from '../Pagination/Pagination';
 
-const Goods = ({ title = 'Новинки' }) => {
+const Goods = ({ title }) => {
   const { goodsList, totalCount } = useSelector((state) => state.goods);
+
+  const supData = (totalCount === 0) ? null : totalCount; //тк был баг, если 0 - выводил
 
   return (
     <section>
       <Container>
         <h2 className={style.title}>
-          {title}
-          <sup>&nbsp;({totalCount})</sup>
+          {title ?? 'Новинки'}
+          {supData && <sup>&nbsp;({supData})</sup>}
         </h2>
         <ul className={style.list}>
           {goodsList.map((item) => (
