@@ -1,3 +1,4 @@
+import style from './FavoritePage.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import Goods from '../../Components/Goods/Goods';
 import { useEffect } from 'react';
@@ -21,7 +22,11 @@ const FavoritePage = () => {
     }
   }, [favorites, page, dispatch]);
 
-  return <Goods title='Избранное' />;
+  return favorites.length ? (
+    <Goods title='Избранное' />
+  ) : (
+    <h3 className={style.empty}>Эээх, еще ничего не добавленно в Избранное</h3>
+  );
 };
 
 export default FavoritePage;
