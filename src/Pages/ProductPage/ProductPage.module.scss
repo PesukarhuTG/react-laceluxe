@@ -184,6 +184,15 @@
   border: none;
   padding: 14px 41px 15px;
   margin-right: 16px;
+  transition: 0.3s all;
+
+  &:hover {
+    background-color: #292929;
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
 
   @media (max-width: 768px) {
     padding: 12px 41px;
