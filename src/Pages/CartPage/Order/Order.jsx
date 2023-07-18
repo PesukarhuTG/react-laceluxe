@@ -4,7 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { PatternFormat } from 'react-number-format';
 import * as Yup from 'yup';
 
-const Order = ({ cartItems }) => {
+const Order = () => {
   const handleSubmitOrder = (values) => {
     console.log(values);
   };
