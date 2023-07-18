@@ -29,7 +29,7 @@ const Cart = ({ cartItems, goodsList }) => {
             ))}
           </ul>
         ) : (
-          <h3 className={style.empty}>В корзине пусто... В мире грустит один котик</h3>
+          <h3 className={style.empty}>В корзине пусто</h3>
         )}
 
         <div className={style.total}>

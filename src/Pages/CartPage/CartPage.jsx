@@ -3,9 +3,10 @@ import Cart from './Cart/Cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchAll } from '../../store/goodSlice';
+import OrderModal from '../../Components/OrderModal/OrderModal';
 
 const CartPage = () => {
-  const { cartItems, countItems } = useSelector((state) => state.cart);
+  const { cartItems, countItems, orderStatus } = useSelector((state) => state.cart);
   const { goodsList } = useSelector((state) => state.goods);
   const [count, setCount] = useState(0);
   const dispatch = useDispatch();
@@ -20,7 +21,8 @@ const CartPage = () => {
   return (
     <>
       <Cart cartItems={cartItems} goodsList={goodsList} />
-      <Order />
+      { goodsList.length ? <Order cartItems={cartItems} /> : '' }
+      { orderStatus === 'success' && <OrderModal />}
     </>
   );
 };
