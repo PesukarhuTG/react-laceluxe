@@ -1,4 +1,4 @@
-# Online-store LACELUXE
+# SPA | Online-store LACELUXE
 
 ## Description :page_facing_up:
 **REACT project**.<br><br>
