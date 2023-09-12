@@ -1,4 +1,4 @@
-# Online-store INSPIRED
+# Online-store LACELUXE
 
 ## Description :page_facing_up:
 **REACT project**.<br><br>
@@ -31,19 +31,19 @@ Using technologies:
 ## Screenshots :camera:
 :small_orange_diamond: :small_orange_diamond: :small_orange_diamond: Main page :small_orange_diamond: :small_orange_diamond: :small_orange_diamond:
 
-![02](https://github.com/PesukarhuTG/react-inspired/assets/39487464/9156e299-4ff0-4fa6-84bc-8dd0dd4c8f6d)
+![ll-01](https://github.com/PesukarhuTG/react-inspired/assets/39487464/47a17539-27c0-41f7-807c-f52419778984)
 
 :small_orange_diamond: :small_orange_diamond: :small_orange_diamond: Product card :small_orange_diamond: :small_orange_diamond: :small_orange_diamond:
 
-![01](https://github.com/PesukarhuTG/react-inspired/assets/39487464/e4328d22-344a-461e-b030-0fb0d630d371)
+![ll-02](https://github.com/PesukarhuTG/react-inspired/assets/39487464/3478253d-8eda-4af7-94cb-9bf95ddc47e4)
 
 :small_orange_diamond: :small_orange_diamond: :small_orange_diamond: Favourites :small_orange_diamond: :small_orange_diamond: :small_orange_diamond:
 
-![03](https://github.com/PesukarhuTG/react-inspired/assets/39487464/4fa6dbb6-b8e8-425c-9cc8-8fa071f29edb)
+![ll-03](https://github.com/PesukarhuTG/react-inspired/assets/39487464/354ab8f6-312f-4c31-bf3b-310e37e344c5)
 
 :small_orange_diamond: :small_orange_diamond: :small_orange_diamond: Cart & Order form :small_orange_diamond: :small_orange_diamond: :small_orange_diamond:
 
-![04](https://github.com/PesukarhuTG/react-inspired/assets/39487464/e2715565-5c2b-447d-97a5-f6feb6fb0f81)
+![ll-04](https://github.com/PesukarhuTG/react-inspired/assets/39487464/6ba7db55-6556-44fc-8a4e-68f232ae7779)
 
 :small_orange_diamond: :small_orange_diamond: :small_orange_diamond: Modal window after order sending :small_orange_diamond: :small_orange_diamond: :small_orange_diamond:
 
