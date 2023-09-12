@@ -47,7 +47,6 @@ const Footer = () => {
             <h2 className={cn(style.title, style.socialTitle)}>
               Связаться с нами
             </h2>
-            <p className={style.socialSubtitle}>Контакты и адреса магазинов</p>
             <ul className={style.socialList}>
               <li>
                 <a href='#' className={cn(style.link, style.socialLinkFB)}>
@@ -79,16 +78,16 @@ const Footer = () => {
           </div>
 
           <div className={style.contacts}>
-            <a className={style.link} href='mailto:inspired@gmail.com'>
-              Inspired@gmail.com
+            <a className={style.link} href='mailto:info@laceluxe.ru'>
+            info@laceluxe.ru
             </a>
-            <a className={style.link} href='tel:89304902620'>
-              8 930 490 26 20
+            <a className={style.link} href='tel:+78122130000'>
+              8 812 213 00 00
             </a>
           </div>
 
           <div className={style.copyright}>
-            <p>&copy; INSPIRED, 2023</p>
+            <p>&copy; LACELUXE, 2023</p>
           </div>
 
           <div className={style.development}>

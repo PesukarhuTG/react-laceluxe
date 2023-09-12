@@ -5,6 +5,7 @@ import { fetchCategory, fetchGender } from '../../store/goodSlice';
 import { setActiveGender } from '../../store/navSlice';
 import Goods from '../../Components/Goods/Goods';
 import Banner from '../../Components/Banner/Banner';
+import Preloader from '../../Components/Preloader/Preloader';
 import usePageFromSearchParams from '../../hooks/usePageFromSearchParams';
 
 const MainPage = () => {
@@ -52,6 +53,7 @@ const MainPage = () => {
 
   return (
     <>
+      { !genderData && <Preloader />}
       { !category && <Banner data={genderData?.banner} />}
       <Goods title={categoryData?.title} />
     </>

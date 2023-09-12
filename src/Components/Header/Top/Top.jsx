@@ -21,10 +21,10 @@ const Top = () => {
     <div className={style.top}>
       <Container className={style.topContainer}>
         <a
-          href='tel:+79304902620'
+          href='tel:+78122130000'
           className={cn(style.topLink, style.topPhone)}
         >
-          8 930 490 26 20
+          8 812 213 00 00
         </a>
 
         <NavLink to='/' className={style.topLogo}>
