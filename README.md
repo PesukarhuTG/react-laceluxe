@@ -24,7 +24,7 @@ Using technologies:
 
 ## Deploy info :zap:
 - custom [API](https://github.com/PesukarhuTG/api_inspired) was deployed on Glich by [link](https://honorable-different-buckthorn.glitch.me/)
-- **enjoy the project by <a href="https://react-inspired.vercel.app/" target="_blank">deploy link</a>**
+- **enjoy the project by <a href="https://react-laceluxe.vercel.app/" target="_blank">deploy link</a>**
 
 
 
